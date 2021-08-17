@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css2?family=Monoton&display=swap);
+#buttonChangeBackground {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0.6rem;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.2);
+    position: relative;
+    top: 13rem;
+    left: 23rem;
+}
+.confirm {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    animation-name: confirm--open;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.confirm--close {
+    animation-name: confirm--close;
+}
+.confirm__window {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    font-size: 14px;
+    font-family: 'Moto Sans',sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: scale(0.75);
+    animation-name: confirm__window--open;
+    animation-duration: 0.2s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+.confirm__titleBar,.confirm__content,.confirm__buttons {
+    padding: 1.25em;
+}
+.confirm__titleBar {
+    background-color: #222222;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.confirm__title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.confirm--close {
+    background: none;
+    border: none;
+    outline: none;
+    transform: scale(2.5);
+    color: #ffffff;
+    transition: color 0.15s;
+}
+.confirm--close:hover {
+    color: #ff0000;
+    cursor: pointer;
+}
+.confirm__content {
+    line-height: 1.8em;
+}
+.confirm__buttons {
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: flex-end;
+}
+.confirm__button {
+    margin-left: 0.6em;
+    padding: 0.4em 0.8em;
+    border: 2px solid #009879;
+    border-radius: 5px;
+    outline: none;
+    background-color: #ffffff;
+    color: #009879;
+    font-family: 'Moto Sans',sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.confirm__button:focus {
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}
+.confirm__button--fill {
+    background-color: #009879;
+    color: #ffffff;
+}
+@keyframes confirm--open {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes confirm--close {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@keyframes confirm__window--open {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
